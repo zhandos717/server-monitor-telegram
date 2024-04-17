@@ -16,7 +16,7 @@ To continuously monitor the load, you can run this script at regular intervals u
 Edit your crontab with crontab -e and add a line to run the script every 5 minutes:
 javascript
 Copy code
-*/5 * * * * /path/to/monitor.sh
+```cron */5 * * * * /path/to/monitor.sh```
 Adjust the interval according to how frequently you want to check the load.
 Note:
 Ensure that curl is installed on your server to use it for sending HTTP requests. You can install it using package managers like apt (Debian/Ubuntu) or yum (CentOS).
@@ -24,7 +24,7 @@ This script assumes you are familiar with basic shell scripting and cron jobs. I
 The awk command is used to read the load average directly from /proc/loadavg and compare it to your set threshold. This method is lightweight and generally reliable across different Linux distributions.
 
 Running the Script:
-Set the script as executable: chmod +x script_name.sh
+Set the script as executable: ```bash chmod +x script_name.sh ```
 Run the script manually or schedule with cron to monitor at regular intervals.
 This refactored script ensures that each check is performed correctly and provides clear, actionable alerts via Telegram when thresholds are exceeded. Adjust the thresholds as needed to match your server's operational parameters.
 
