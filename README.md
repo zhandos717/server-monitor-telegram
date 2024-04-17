@@ -24,7 +24,7 @@ This script assumes you are familiar with basic shell scripting and cron jobs. I
 The awk command is used to read the load average directly from /proc/loadavg and compare it to your set threshold. This method is lightweight and generally reliable across different Linux distributions.
 
 Running the Script:
-Set the script as executable: ```bash chmod +x script_name.sh ```
+Set the script as executable: ```bash chmod +x monitor.sh ```
 Run the script manually or schedule with cron to monitor at regular intervals.
 This refactored script ensures that each check is performed correctly and provides clear, actionable alerts via Telegram when thresholds are exceeded. Adjust the thresholds as needed to match your server's operational parameters.
 
