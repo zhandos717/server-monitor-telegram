@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#--------------------------TOKEN&ID-------------------------------
-TELEGRAM_BOT_TOKEN="you_bot_token"
-CHAT_ID="you_chat_id"
+set -a  # Automatically export all variables
+source .env
+set +a  # Disable auto export
 
 # Thresholds (adjust as needed)
 CPU_THRESHOLD=94
@@ -66,7 +66,7 @@ send_detailed_report() {
 |----------|------------|------------------------|
 | CPU      |            | $(printf "%-23s" "$cpu_percentage")|
 | RAM      |$(printf "%-12s" "$ram_total MB")| $(printf "%-2s MB" "$ram_used") $(printf "(%-13s)" "$ram_percentage_formatted")|
-| DISK     |$(printf "%-12s" "$disk_total")| $disk_used $(printf "%-22s" "$disk_percentage")|
+| DISK     |$(printf "%-12s" "$disk_total")|$(printf "%-4s %-19s" "$disk_used"  "$disk_percentage")|
 </pre>"
 
     # Send the message
@@ -75,6 +75,7 @@ send_detailed_report() {
 
 # Main function
 main() {
+    send_detailed_report "Мониторинг запущен"
     while true; do
         check_cpu
         check_memory
