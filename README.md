@@ -22,3 +22,11 @@ Note:
 Ensure that curl is installed on your server to use it for sending HTTP requests. You can install it using package managers like apt (Debian/Ubuntu) or yum (CentOS).
 This script assumes you are familiar with basic shell scripting and cron jobs. If you encounter any permissions issues or have specific configuration requirements, you might need to adjust the script accordingly.
 The awk command is used to read the load average directly from /proc/loadavg and compare it to your set threshold. This method is lightweight and generally reliable across different Linux distributions.
+
+⚠️ High Disk Usage: % ⚠️ Detailed System Usage:
+
+| Название | Объем      | Использовано           |
+|----------|------------|------------------------|
+| CPU      |            | 0.5%                   |
+| RAM      |7825 MB     | 1434 MB (18.3%        )|
+| DISK     |            |                        |
