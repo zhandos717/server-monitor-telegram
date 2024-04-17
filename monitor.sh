@@ -65,7 +65,7 @@ send_detailed_report() {
 | Название | Объем      | Использовано           |
 |----------|------------|------------------------|
 | CPU      |            | $(printf "%-23s" "$cpu_percentage")|
-| RAM      |$(printf "%-12s" "$ram_total MB")| $(printf "%-2s MB" "$ram_used") $(printf "(%-13s)" "$ram_percentage_formatted")|
+| RAM      |$(printf "%-12s" "$ram_total MB")|$(printf "%-6s MB (%-12s)" "$ram_used" "$ram_percentage_formatted")|
 | DISK     |$(printf "%-12s" "$disk_total")|$(printf "%-4s %-19s" "$disk_used"  "$disk_percentage")|
 </pre>"
 
